@@ -38,4 +38,4 @@ $ python main.py --gpu 0,1 --shuffle --epochs 10
 ```
 
 ## Notes
-If you find bugs, please raise an issue. Very welcome!
+If you find bugs, please create an issue. Very welcome!
