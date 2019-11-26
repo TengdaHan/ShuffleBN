@@ -40,7 +40,8 @@ class ShuffleBatchNorm(Function):
         mean_all_reduce.wait()
         invstd_all_reduce.wait()
 
-        print('[%d]mean before shuffle:'%rank, mean_l[rank][0:4])
+        ### uncomment to check result:
+        # print('[%d]mean before shuffle:'%rank, mean_l[rank][0:4])
 
         # shuffle global mean & invstd
         new_rank = forward_shuffle(rank, world_size)
@@ -59,7 +60,8 @@ class ShuffleBatchNorm(Function):
             count.long().item()
         )
 
-        print('[%d]mean after shuffle:'%rank, mean[0:4])
+        ### uncomment to check result:
+        # print('[%d]mean after shuffle:'%rank, mean[0:4])
 
         self.save_for_backward(input, weight, mean, invstd)
         self.process_group = process_group
