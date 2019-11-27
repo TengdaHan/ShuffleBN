@@ -103,7 +103,7 @@ def main_worker(gpu_id, args):
     H,W = 8,8
     model.train()
     for i in range(args.epochs):
-        data = torch.FloatTensor(B,3,8,8).cuda(args.gpu_id)
+        data = torch.FloatTensor(B,3,H,W).cuda(args.gpu_id)
         nn.init.normal_(data)
         target = torch.from_numpy(np.random.choice(range(2), B)).to(data.device).long()
         logit = model(data)
