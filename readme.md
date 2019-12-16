@@ -39,3 +39,6 @@ $ python main.py --gpu 0,1 --shuffle --epochs 10
 
 ## Notes
 If you find bugs, please create an issue. Very welcome!
+
+Update:
+* Doesn't work when training with multiple nodes, will fix soon.
