@@ -1,5 +1,7 @@
 # Shuffle BatchNorm
 
+## Note: please refer to [github.com/facebookresearch/moco](https://github.com/facebookresearch/moco/blob/main/moco/builder.py#L69) for official implementation. This implementation is not verified.
+
 An implementation of __Shuffle BatchNorm__ technique mentioned in [He et al., Momentum Contrast for Unsupervised Visual Representation Learning, 2019](https://arxiv.org/abs/1911.05722), in Section 3.3 "Shuffling BN". 
 
 Implemented with torch 1.3.1. It works with pytorch [DistrbutedDataParallel](https://pytorch.org/docs/stable/nn.html?highlight=distributeddataparallel#torch.nn.parallel.DistributedDataParallel) with 1 process per GPU. So in order to use this `ShuffleBatchNorm` layer you need at least 2 GPUs. 
